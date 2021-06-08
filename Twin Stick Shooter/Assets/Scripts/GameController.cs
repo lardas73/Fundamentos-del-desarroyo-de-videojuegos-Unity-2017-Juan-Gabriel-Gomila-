@@ -11,7 +11,7 @@ public class GameController : MonoBehaviour
     public float timeBetweenEnemies = 0.25f;
     public float timeBetweenWaves = 2f;
 
-    public int enemiesPerWare = 10;
+    public int enemiesPerWare = 1;
     private int currentNuemberOfEnemies = 0;
 
 
@@ -41,8 +41,9 @@ public class GameController : MonoBehaviour
                     currentNuemberOfEnemies++;
                     yield return new WaitForSeconds (timeBetweenEnemies);
                 }
+                enemiesPerWare++;
             }
-
+            
             // Si llego hasta aqui es que aun tengo enemigmos, le indico al bucle principal que espere otros 2 segundos mas
             yield return new WaitForSeconds (timeBetweenWaves);
         }

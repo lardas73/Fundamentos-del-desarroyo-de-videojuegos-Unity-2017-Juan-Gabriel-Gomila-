@@ -107,6 +107,7 @@
 -define:ENABLE_TIMELINE
 -define:ENABLE_LEGACY_INPUT_MANAGER
 -define:CROSS_PLATFORM_INPUT
+-define:UNITY_POST_PROCESSING_STACK_V2
 -define:CSHARP_7_OR_LATER
 -define:CSHARP_7_3_OR_NEWER
 -r:"C:/Program Files/Unity/Hub/Editor/2021.1.10f1/Editor/Data/Managed/UnityEngine/UnityEditor.CoreModule.dll"
@@ -302,12 +303,26 @@
 -r:"C:/Program Files/Unity/Hub/Editor/2021.1.10f1/Editor/Data/NetStandard/Extensions/2.0.0/System.Runtime.InteropServices.WindowsRuntime.dll"
 -r:"C:/Program Files/Unity/Hub/Editor/2021.1.10f1/Editor/Data/NetStandard/ref/2.0.0/netstandard.dll"
 -r:"C:/Program Files/Unity/Hub/Editor/2021.1.10f1/Editor/Data/PlaybackEngines/AppleTVSupport/UnityEditor.iOS.Extensions.Xcode.dll"
+-r:"Library/Bee/artifacts/1900b0aE.dag/Unity.2D.Sprite.Editor.ref.dll"
+-r:"Library/Bee/artifacts/1900b0aE.dag/Unity.2D.Tilemap.Editor.ref.dll"
+-r:"Library/Bee/artifacts/1900b0aE.dag/Unity.TextMeshPro.Editor.ref.dll"
+-r:"Library/Bee/artifacts/1900b0aE.dag/Unity.TextMeshPro.ref.dll"
+-r:"Library/Bee/artifacts/1900b0aE.dag/UnityEditor.UI.ref.dll"
+-r:"Library/Bee/artifacts/1900b0aE.dag/UnityEngine.UI.ref.dll"
+"Assets/EffectExamples/Misc Effects/Scripts/SpawnEffect.cs"
+"Assets/Scripts/DestroyGameObject.cs"
 "Assets/Scripts/EnemyController.cs"
 "Assets/Scripts/GameController.cs"
 "Assets/Scripts/LaserController.cs"
 "Assets/Scripts/MoveToPlayer.cs"
 "Assets/Scripts/ParallaxVertical.cs"
 "Assets/Scripts/PlayerController.cs"
+"Assets/Shared/Ramps/Runtime/RampAsset.cs"
+"Assets/Shared/Scripts/AdjustTimeScale.cs"
+"Assets/Shared/Scripts/ProximityActivate.cs"
+"Assets/Shared/Scripts/SimpleCameraController.cs"
+"Assets/Shared/Scripts/SimpleCharacterMotor.cs"
+"Assets/TutorialInfo/Scripts/Readme.cs"
 -langversion:8.0
 
 /deterministic

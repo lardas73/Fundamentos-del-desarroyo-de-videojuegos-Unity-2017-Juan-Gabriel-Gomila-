@@ -22,11 +22,15 @@ public class PlayerController : MonoBehaviour
     private float timeUntilNextFire = 0f;
 
     public List<KeyCode> shootButton;
+
+    public AudioClip shootSound;
+
+    private AudioSource audioSource;
     
     // Start is called before the first frame update
     void Start()
     {
-        
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -90,6 +94,7 @@ public class PlayerController : MonoBehaviour
     }
 
     void ShootLaser(){
+        audioSource.PlayOneShot(shootSound);
         Vector3 laserPos = this.transform.position;
         float rotationAngle = this.transform.localEulerAngles.z -90;
         laserPos.x += Mathf.Cos (rotationAngle * Mathf.Deg2Rad) * laserDistance;

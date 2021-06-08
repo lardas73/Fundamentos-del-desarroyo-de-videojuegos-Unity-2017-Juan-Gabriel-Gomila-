@@ -5,6 +5,9 @@ using UnityEngine;
 public class EnemyController : MonoBehaviour
 {
     public int health = 2;
+    public Transform PrefabExplosion;
+
+    public AudioClip hitSound;
 
     void OnTriggerEnter2D(Collider2D other) {
         
@@ -13,6 +16,7 @@ public class EnemyController : MonoBehaviour
             LaserController laser = other.gameObject.GetComponent<LaserController>();
             health -= laser.damage;
             Destroy (other.gameObject);
+            GetComponent<AudioSource>().PlayOneShot(hitSound);
             if (health <=0){
                 DestruirEnemigo();
             }
@@ -27,6 +31,8 @@ public class EnemyController : MonoBehaviour
     void DestruirEnemigo(){
         GameController _gameController = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
         _gameController.KillEnemy();
+        Instantiate (PrefabExplosion, this.transform.position, this.transform.rotation);
+        
         Destroy (this.gameObject);
     }
 
