@@ -17,8 +17,10 @@ public class MoveToPlayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector3 direction = player.position - this.transform.position;
-        direction.Normalize();
-        this.transform.position += direction * speed * Time.deltaTime;
+         if (!PauseMenuBehavior.isPaused){
+            Vector3 direction = player.position - this.transform.position;
+            direction.Normalize();
+            this.transform.position += direction * speed * Time.deltaTime;
+         }
     }
 }

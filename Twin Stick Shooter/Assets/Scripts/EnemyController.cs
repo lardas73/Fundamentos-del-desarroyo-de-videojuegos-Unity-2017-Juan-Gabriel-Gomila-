@@ -5,6 +5,7 @@ using UnityEngine;
 public class EnemyController : MonoBehaviour
 {
     public int health = 2;
+    public int points = 10;
     public Transform PrefabExplosion;
 
     public AudioClip hitSound;
@@ -31,6 +32,7 @@ public class EnemyController : MonoBehaviour
     void DestruirEnemigo(){
         GameController _gameController = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
         _gameController.KillEnemy();
+        _gameController.IncreaseScore(points);
         Instantiate (PrefabExplosion, this.transform.position, this.transform.rotation);
         
         Destroy (this.gameObject);

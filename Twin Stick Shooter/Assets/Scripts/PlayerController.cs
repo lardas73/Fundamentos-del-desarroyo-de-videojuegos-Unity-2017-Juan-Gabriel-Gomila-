@@ -36,9 +36,11 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Rotate();
-        Move();
-        Fire();
+        if (!PauseMenuBehavior.isPaused){
+            Rotate();
+            Move();
+            Fire();
+        }
     }
     
     /// <summary>

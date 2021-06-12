@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameController : MonoBehaviour
 {
@@ -11,9 +12,15 @@ public class GameController : MonoBehaviour
     public float timeBetweenEnemies = 0.25f;
     public float timeBetweenWaves = 2f;
 
-    public int enemiesPerWare = 1;
+    private int enemiesPerWare = 1;
     private int currentNuemberOfEnemies = 0;
 
+    [Header ("Interfaz Grafica de Usuario")]
+    private int score = 0;
+    private int wave = 0;
+
+    public Text scoreText;
+    public Text waveText;
 
     // Start is called before the first frame update
     void Start()
@@ -42,6 +49,7 @@ public class GameController : MonoBehaviour
                     yield return new WaitForSeconds (timeBetweenEnemies);
                 }
                 enemiesPerWare++;
+                IncreaseWave();
             }
             
             // Si llego hasta aqui es que aun tengo enemigmos, le indico al bucle principal que espere otros 2 segundos mas
@@ -51,5 +59,15 @@ public class GameController : MonoBehaviour
 
     public void KillEnemy(){
         currentNuemberOfEnemies--;
+    }
+
+    public void IncreaseScore(int increaseScore){
+        score += increaseScore;
+        scoreText.text = "SCORE : " + score;
+    }
+
+    private void IncreaseWave(){
+        wave++;
+        waveText.text = "WAVES : " + wave;
     }
 }
